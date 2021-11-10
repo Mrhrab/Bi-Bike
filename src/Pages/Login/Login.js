@@ -38,7 +38,7 @@ const Login = () => {
                     >
                         <Form.Control
                         name="email"
-                         onChange={handleOnChange}
+                         onBlur={handleOnChange}
                          type="email"
                          placeholder="name@example.com" />
 
@@ -48,7 +48,7 @@ const Login = () => {
                     controlId="floatingPassword" label="Password">
 
                         <Form.Control 
-                        onChange={handleOnChange}
+                        onBlur={handleOnChange}
                         name="password"
                         type="password" 
                         placeholder="Password"

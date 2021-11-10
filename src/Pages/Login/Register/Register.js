@@ -11,7 +11,7 @@ const Register = () => {
 
     const {user, registerUser, isLoading,authError } = useAuth();
 
-    const handleOnChange = e => {
+    const handleOnBlur = e => {
        const field = e.target.name;
        const value = e.target.value;
        const newLoginData = {...loginData};
@@ -38,12 +38,26 @@ const Register = () => {
                     <FloatingLabel
                         
                         controlId="floatingInput"
+                        label="Full Name"
+                        className="mb-3"
+                    >
+                        <Form.Control
+                         name="name"
+                         onBlur={handleOnBlur}
+                         type="text"
+                         placeholder="name@example.com" />
+
+                    </FloatingLabel>
+
+                    <FloatingLabel
+                        
+                        controlId="floatingInput"
                         label="Email address"
                         className="mb-3"
                     >
                         <Form.Control
                          name="email"
-                         onChange={handleOnChange}
+                         onBlur={handleOnBlur}
                          type="email"
                          placeholder="name@example.com" />
 
@@ -53,7 +67,7 @@ const Register = () => {
                     controlId="floatingPassword" label="Password">
 
                         <Form.Control 
-                        onChange={handleOnChange}
+                        onBlur={handleOnBlur}
                         name="password"
                         type="password" 
                         placeholder="Password"
@@ -65,7 +79,7 @@ const Register = () => {
                     controlId="floatingPassword" label="Retype Password">
 
                         <Form.Control 
-                        onChange={handleOnChange}
+                        onBlur={handleOnBlur}
                         name="password2"
                         type="password" 
                         placeholder="Password"
