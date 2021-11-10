@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, Container, FloatingLabel, Form, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 
@@ -8,7 +8,7 @@ import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
-
+    const history = useHistory();
     const {user, registerUser, isLoading,authError } = useAuth();
 
     const handleOnBlur = e => {
@@ -23,7 +23,7 @@ const Register = () => {
             alert('Password did not match');
             return;
         }
-        registerUser(loginData.email, loginData.password)
+        registerUser(loginData.email, loginData.password,loginData.name, history);
 
         e.preventDefault();
     }
