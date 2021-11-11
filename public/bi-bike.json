@@ -1,0 +1,83 @@
+[
+  {
+    
+    "img": "https://i.ibb.co/fDh9HZv/bike-1.webp",
+    "name": "Top Fuel",
+    "price": "1099$",
+    "description": "Top Fuel’s a full suspension XC ripper that’s fast on flow and loves getting down on techy trails."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/VxGXd14/bike-2.jpg",
+    "name": "Supercaliber",
+    "price": "1199$",
+    "description": "From cutting-edge carbon race bikes to versatile models made for loads of fun on light trails."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/nD7jVZ1/bike-3.jpg",
+    "name": "Slash",
+    "price": "1299$",
+    "description": "Game-changing IsoStrut suspension tech makes this World Cup carbon race bike fast, light, and smooth."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/jw8vPXP/bike-4.jpg",
+    "name": "Remedy",
+    "price": "1399$",
+    "description": "Snappy 27.5˝ wheels make this the rig for popping off jumps, railing corners, and throwing the bike around."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/x1KLR8m/bike-5.webp",
+    "name": "Powerfly",
+    "price": "1499$",
+    "description": "A long-travel all-mountain bike built for racing rugged enduro lines and having a rippin’ good time in the rough."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/GVxz85q/bike-6.webp",
+    "name": "Powerfly Equipped",
+    "price": "1599$",
+    "description": "Built for trail riding and commuting, Powerfly Equipped comes decked out with ride-ready accessories."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/88f3Xgp/bike-7.webp",
+    "name": "Rail",
+    "price": "1699$",
+    "description": "Powerfly is a versatile and powerful e-MTB that helps you explore more of your off-road world."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/sgn2xZX/bike-8.webp",
+    "name": "E-Caliber",
+    "price": "1799$",
+    "description": "Our lightest full suspension e-MTB delivers the perfect amount of suspension and power for long, fast XC rides."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/QmwK2M5/bike-9.webp",
+    "name": "Session",
+    "price": "1899$",
+    "description": "A hard-charging electric trail bike with plenty of travel and proven technology to get you through the rough stuff."
+    
+  },
+  {
+    
+    "img": "https://i.ibb.co/4MxCF5x/bike-10.webp",
+    "name": "Ticket",
+    "price": "1999$",
+    "description": "For those who spend most of their time in the air perfecting whips, flips and other gravity-defying tricks"
+    
+  }
+  
+]
