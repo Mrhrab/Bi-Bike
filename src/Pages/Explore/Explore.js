@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Navigation from '../Shared/Navigation/Navigation';
+import { useParams } from 'react-router-dom'
 import Items from './Items/Items';
 
 const Explore = () => {
      const [products, setProducts] = useState([]);
+     
+
     useEffect(() => {
-        fetch('./bi-bike.json')
+        fetch('http://localhost:5000/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
@@ -16,7 +19,7 @@ const Explore = () => {
            <Container>
                 {
                 products.map(product =><Items
-                key={product.name}
+                key={product._id}
                 product={product}
                 ></Items> )
             }

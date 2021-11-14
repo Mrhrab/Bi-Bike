@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Items = (props) => {
     const {name, img, description, price} = props.product;
+    
     return (
         <div>
              <Card className="mt-5 ">

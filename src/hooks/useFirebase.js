@@ -5,7 +5,7 @@ import initializeFirebase from "../Pages/Login/Firebase/firebase.init";
 
 initializeFirebase();
 
-const useFirebase = () => {
+   const useFirebase = () => {
    const [user, setUser] = useState({});
    const [isLoading, setIsLoading] = useState(true);
    const [authError, setAuthError] = useState('');
@@ -14,13 +14,16 @@ const useFirebase = () => {
 
    const registerUser = ( email, password, name, history) => {
      setIsLoading(true);
-       createUserWithEmailAndPassword(auth, email, password)
-       .then((userCredential) => {
+     createUserWithEmailAndPassword(auth, email, password)
+     .then((userCredential) => {
      setAuthError('');
      const newUser = {email, displayName: name};
      setUser(newUser);
+     // save user to database
+     saveUser(email, name);
+     // send name to firebase after creation
      updateProfile(auth.currentUser, {
-  displayName: name
+     displayName: name
 }).then(() => {
   
 }).catch((error) => {
@@ -35,8 +38,8 @@ const useFirebase = () => {
 }
 
 
-    const loginUser = ( email, password, location, history)=> {
-        signInWithEmailAndPassword(auth, email, password)
+  const loginUser = ( email, password, location, history)=> {
+  signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const destination = location?.state?.from || '/';
     history.replace(destination);
@@ -69,11 +72,23 @@ const logOut = () => {
     signOut(auth).then(() => {
   // Sign-out successful.
 }).catch((error) => {
-  // An error happened.
+ 
 })
   .finally(() => setIsLoading(false));
 
 }
+
+  const saveUser = (email, displayName) => {
+      const user ={ email, displayName };
+      fetch('http://localhost:5000/users', { 
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+      .then()
+  }
 
 
    return {

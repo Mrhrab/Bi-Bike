@@ -6,13 +6,17 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
-import Dashboard from './Pages/Dashboard/Dashboard';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Explore from './Pages/Explore/Explore';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import OrderNow from './Pages/OrderNow/OrderNow';
+import Orders from './Pages/Dashboard/Orders/Orders';
+import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
+import AddReview from './Pages/Home/Review/AddReview/AddReview';
+import AddAdmin from './Pages/Dashboard/AddAdmin/AddAdmin';
 
 function App() {
   return (
@@ -29,11 +33,23 @@ function App() {
           <Route path="/explore">
             <Explore></Explore>
           </Route>
+          <PrivateRoute path="/addReview">
+             <AddReview></AddReview>
+          </PrivateRoute>
           <PrivateRoute path="/orderNow">
              <OrderNow></OrderNow>
           </PrivateRoute>
           <PrivateRoute path="/dashboard">
              <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/addAdmin">
+             <AddAdmin></AddAdmin>
+          </PrivateRoute>
+          <PrivateRoute path="/orders">
+             <Orders></Orders>
+          </PrivateRoute>
+          <PrivateRoute path="/addProduct">
+             <AddProduct></AddProduct>
           </PrivateRoute>
           <Route path="/login">
              <Login></Login>

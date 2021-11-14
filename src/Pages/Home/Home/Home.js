@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../../Shared/Navigation/Navigation'
 import Banner from '../Banner/Banner';
+import AddReview from '../Review/AddReview/AddReview';
 
 
 const Home = () => {
@@ -8,6 +9,8 @@ const Home = () => {
         <div>
             <Navigation></Navigation>
             <Banner></Banner>
+
+            <AddReview></AddReview>
         </div>
     );
 };
