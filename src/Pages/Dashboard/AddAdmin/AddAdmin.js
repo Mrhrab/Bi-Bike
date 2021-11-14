@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Container, FloatingLabel, Form } from 'react-bootstrap';
+import { Alert, Container, FloatingLabel, Form } from 'react-bootstrap';
 import Dashboard from '../Dashboard/Dashboard';
 
 const AddAdmin = () => {
     const [ email, setEmail] = useState('');
+    const [ success, setSuccess] = useState(false);
     const handleOnBlur = e => {
         setEmail(e.target.value);
     }
@@ -19,7 +20,12 @@ const AddAdmin = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(data.modifiedCount){  
+              console.log(data);
+              
+              setSuccess(true);
+            }
+            
         })
         
         e.preventDefault();
@@ -46,7 +52,11 @@ const AddAdmin = () => {
                     </FloatingLabel>
                     <button type="submit" className="btn btn-warning">MAke ADMIN</button>
             </form>
+            
         </Container>
+        {success && <Alert >
+                      Admin creation Successful!!
+                    </Alert>}
        </div>
     );
 };
