@@ -109,7 +109,7 @@ const AddProduct = () => {
                     </FloatingLabel>
 
 
-                    <button type="submit" className="btn btn-warning m-5">Submit & Go TO Pay</button>
+                    <button type="submit" className="btn btn-dark m-5">Add to explore</button>
                 </form>
                 
             </>

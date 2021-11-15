@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Container, FloatingLabel, Form } from 'react-bootstrap';
 import Navigation from '../Shared/Navigation/Navigation';
 import useAuth from '../../hooks/useAuth';
+import { useParams } from 'react-router';
 
 const OrderNow = () => {
+    const { serviceId } = useParams();
 
  const {user} = useAuth();
+
  const initialInfo = { name: user.displayName, email: user.email, phone: '', address: '', quantity: '', country: '' }
 
  const [orderSuccess, setOrderSuccess] = useState(false);
  const [orderInfo, setOrderInfo] = useState(initialInfo);
+ const [service, setService] = useState({});
 
  const handleOnBlur = e => {
   const field = e.target.name;
@@ -20,6 +24,8 @@ const OrderNow = () => {
  }
 
  const handleOrderSubmit = e => {
+
+    
         const order = {
             ...orderInfo
         }
@@ -39,10 +45,19 @@ const OrderNow = () => {
         e.preventDefault();
             
         }
+        useEffect(() =>{
+            fetch( `http://localhost:5000/products/${serviceId}` )
+            .then(res => res.json())
+            .then(data => setService(data))
+        }, [])
+        
 
     return (
         <div>
+            
+            
             <Navigation></Navigation>
+            
             <Container>
                                <h1 className="text-secondary mt-5">Get The Bike Of Your Dream Now!!!</h1>
                                <p className="text-dark">Get 7day international free delivery service</p>
@@ -135,7 +150,7 @@ const OrderNow = () => {
 
                     </FloatingLabel>
 
-                    <button type="submit" className="btn btn-warning m-5">Submit & Go TO Pay</button>
+                    <button type="submit" className="btn btn-warning m-5">Order Now</button>
                 </form>
                 
             </>

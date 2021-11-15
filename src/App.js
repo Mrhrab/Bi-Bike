@@ -17,6 +17,9 @@ import Orders from './Pages/Dashboard/Orders/Orders';
 import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 import AddReview from './Pages/Home/Review/AddReview/AddReview';
 import AddAdmin from './Pages/Dashboard/AddAdmin/AddAdmin';
+import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
+import Footer from './Pages/Shared/Footer/Footer';
+import Payment from './Pages/Dashboard/Payment/Payment';
 
 function App() {
   return (
@@ -36,21 +39,24 @@ function App() {
           <PrivateRoute path="/addReview">
              <AddReview></AddReview>
           </PrivateRoute>
-          <PrivateRoute path="/orderNow">
+          <PrivateRoute path="/orderNow/:serviceId">
              <OrderNow></OrderNow>
           </PrivateRoute>
           <PrivateRoute path="/dashboard">
              <Dashboard></Dashboard>
           </PrivateRoute>
-          <PrivateRoute path="/addAdmin">
-             <AddAdmin></AddAdmin>
+          <PrivateRoute path="/payment">
+             <Payment></Payment>
           </PrivateRoute>
+          <AdminRoute path="/addAdmin">
+             <AddAdmin></AddAdmin>
+          </AdminRoute>
           <PrivateRoute path="/orders">
              <Orders></Orders>
           </PrivateRoute>
-          <PrivateRoute path="/addProduct">
+          <AdminRoute path="/addProduct">
              <AddProduct></AddProduct>
-          </PrivateRoute>
+          </AdminRoute>
           <Route path="/login">
              <Login></Login>
           </Route>
@@ -58,6 +64,7 @@ function App() {
             <Register></Register>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </AuthProvider>
     </div>

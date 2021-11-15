@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,signOut, onAuthStateChanged, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,signOut, onAuthStateChanged, updateProfile, getIdToken } from "firebase/auth";
 import initializeFirebase from "../Pages/Login/Firebase/firebase.init";
 
 
@@ -9,10 +9,12 @@ initializeFirebase();
    const [user, setUser] = useState({});
    const [isLoading, setIsLoading] = useState(true);
    const [authError, setAuthError] = useState('');
-   
+   const [admin, setAdmin] = useState(false);
+   const [ token, setToken] = useState('');
 
    const auth = getAuth();
-
+    
+   // register function
    const registerUser = ( email, password, name, history) => {
      setIsLoading(true);
      createUserWithEmailAndPassword(auth, email, password)
@@ -38,7 +40,7 @@ initializeFirebase();
   .finally(() => setIsLoading(false));
 }
 
-
+  // login function
   const loginUser = ( email, password, location, history)=> {
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -59,6 +61,10 @@ useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
   if (user) {
     setUser(user);
+    getIdToken(user)
+    .then(idToken => {
+      setToken(idToken)
+    })
   } else {
      setUser({})
   }
@@ -66,8 +72,13 @@ useEffect(() => {
 });
  return () => unsubscribe
 }, [])
-
-
+  
+//server part
+ useEffect(() => {
+   fetch(`http://localhost:5000/users/${user.email}`)
+   .then(res => res.json())
+   .then(data => setAdmin(data.admin))
+ }, [user.email])
 
 const logOut = () => {
     signOut(auth).then(() => {
@@ -78,7 +89,7 @@ const logOut = () => {
   .finally(() => setIsLoading(false));
 
 }
-
+   // save user to server function
   const saveUser = (email, displayName) => {
       const user ={ email, displayName };
       fetch('http://localhost:5000/users', { 
@@ -94,11 +105,13 @@ const logOut = () => {
 
    return {
        user,
+       admin,
        registerUser,
        logOut,
        loginUser,
        isLoading,
-       authError
+       authError,
+       token
 
    }
 }

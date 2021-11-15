@@ -101,8 +101,8 @@ const Register = () => {
             
             
         </Container>
-        <h6>Not a user?</h6> 
-           <Link to="/login" style={{textDecoration: 'none'}}>Already Registered User?</Link>
+        
+           <Link to="/login" style={{textDecoration: 'none'}}>Already Registered User?Login Now</Link>
         </div>
     );
 };

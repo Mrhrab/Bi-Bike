@@ -22,7 +22,7 @@ const Items = (props) => {
                         Description: {description}
                     </Card.Text>
                     </Card.Body>
-                    <Link to="/orderNow"><button className="btn btn-secondary"> Proceed to Order</button></Link>
+                    <Link to="/orderNow/:serviceId"><button className="btn btn-secondary"> Proceed to Order</button></Link>
                      
                       
                     </div>

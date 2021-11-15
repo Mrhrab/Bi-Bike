@@ -15,7 +15,7 @@ const Banner = () => {
     />
     <Carousel.Caption>
       <h3>Affordable Super Bike</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <p>If your application contains a large number of form groups, we </p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -27,7 +27,7 @@ const Banner = () => {
 
     <Carousel.Caption>
       <h3>Long Lasting</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>recommend building a higher-level Bike encapsulating a complete field group .</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -39,7 +39,7 @@ const Banner = () => {
 
     <Carousel.Caption>
       <h3>Best Performance</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <p>For textual form controls—like Super Bike and textareas—use the FormControl component.</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

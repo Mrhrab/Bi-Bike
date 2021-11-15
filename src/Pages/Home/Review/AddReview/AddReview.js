@@ -4,7 +4,7 @@ import useAuth from '../../../../hooks/useAuth'
 
 const AddReview = () => {
     const {user} = useAuth();
- const initialInfo = { name: '', ratings: '', description: '' }
+ const initialInfo = { name: user.displayName , ratings: '', description: '' }
 
  const [pushSuccess, setPushSuccess] = useState(false);
  const [review, setReview] = useState(initialInfo);
@@ -54,7 +54,7 @@ const AddReview = () => {
                         className="mb-3"
                     >
                         <Form.Control
-                        defaultValue={user.displayName}
+                         defaultValue={user.displayName}
                          name="name"
                          onBlur={handleOnBlur}
                          type="text"
