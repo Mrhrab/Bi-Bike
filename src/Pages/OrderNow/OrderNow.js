@@ -29,7 +29,7 @@ const OrderNow = () => {
         const order = {
             ...orderInfo
         }
-         fetch('http://localhost:5000/orders', {
+         fetch('https://shielded-brushlands-84106.herokuapp.com/orders', {
              method: 'POST',
              headers: { 
                  'content-type' : 'application/json'
@@ -46,7 +46,7 @@ const OrderNow = () => {
             
         }
         useEffect(() =>{
-            fetch( `http://localhost:5000/products/${serviceId}` )
+            fetch( `https://shielded-brushlands-84106.herokuapp.com/products/${serviceId}` )
             .then(res => res.json())
             .then(data => setService(data))
         }, [])

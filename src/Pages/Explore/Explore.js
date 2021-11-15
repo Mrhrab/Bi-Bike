@@ -8,7 +8,7 @@ const Explore = () => {
      
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://shielded-brushlands-84106.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])

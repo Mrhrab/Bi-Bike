@@ -24,7 +24,7 @@ const AddProduct = () => {
         const order = {
             ...productInfo
         }
-         fetch('http://localhost:5000/products', {
+         fetch('https://shielded-brushlands-84106.herokuapp.com/products', {
              method: 'POST',
              headers: { 
                  'content-type' : 'application/json'

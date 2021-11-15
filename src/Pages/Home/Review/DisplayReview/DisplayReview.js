@@ -7,7 +7,7 @@ const DisplayReview = () => {
      
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://shielded-brushlands-84106.herokuapp.com/reviews')
         .then(res => res.json())
         .then(data => setComments(data))
     }, [])

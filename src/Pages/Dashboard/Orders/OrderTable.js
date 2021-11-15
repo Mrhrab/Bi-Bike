@@ -5,7 +5,7 @@ const OrderTable = (props) => {
     const { name, email, phone, address, quantity, _id } = props.order;
 
     const handleDelete = id =>{
-        const url = `http://localhost:5000/orders/${_id}`;
+        const url = `https://shielded-brushlands-84106.herokuapp.com/orders/${_id}`;
         fetch(url, {
             method: 'DELETE'
         })
