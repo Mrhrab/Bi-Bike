@@ -20,6 +20,10 @@ const Navigation = () => {
                     </Nav>
                     <Nav>
                     <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                    <Nav.Link > <h6 className="text-white">Hello! {user.displayName}</h6> </Nav.Link>
+                    <Nav.Link > <p className="text-white"><small>{user.email}</small> </p> </Nav.Link>
+                   
+                   
                     {user?.email ?
                      <button onClick={logOut} className="btn btn-dark">Log Out</button>
                     :
