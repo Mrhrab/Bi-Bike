@@ -7,7 +7,7 @@ const Payment = () => {
         <div>
             <Dashboard></Dashboard>
             <Container>
-            <h1 class=" my-5">Payment Coming soon</h1>
+            <h1 class=" my-5">Payment Coming </h1>
 
             <div className="my-5">
   <Form.Control size="lg" type="text" placeholder="Large text" />
